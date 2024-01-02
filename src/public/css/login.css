@@ -1,0 +1,479 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/* Login page Start */
+* {
+    /* font-family: 'Crimson Text', serif; */
+    font-family: 'Open Sans', sans-serif;
+}
+
+.Login {
+    width: 100%;
+    background-image: url(../images/loginbg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.logleft {
+    position: relative;
+}
+
+.logo {
+    margin: 20px 30px 0 30px;
+}
+
+.ChefMain {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: calc(100vh - 127px);
+}
+
+.Chef {
+    position: absolute;
+    bottom: -16px;
+    right: -42px;
+    width: 100%;
+}
+
+.logleft:after {
+    content: '';
+    width: 50%;
+    height: 100vh;
+    background-color: #2E3333;
+    background-image: url(../images/logLeft.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.foodBox {
+    position: relative;
+}
+
+.foodBox .logFood:first-child {
+    position: absolute;
+    bottom: 24px;
+    z-index: 6;
+    height: 150px;
+    width: 150px;
+    filter: drop-shadow(10px 4px 33px #2E3333);
+}
+
+.foodBox .logFood:nth-child(2) {
+    position: absolute;
+    bottom: 24px;
+    left: 120px;
+    z-index: 5;
+    height: 150px;
+    width: 150px;
+    filter: drop-shadow(10px 4px 33px #2E3333);
+
+}
+
+.foodBox .logFood:nth-child(3) {
+    position: absolute;
+    bottom: 24px;
+    left: 240px;
+    z-index: 4;
+    height: 150px;
+    width: 150px;
+    filter: drop-shadow(10px 4px 33px #2E3333);
+
+}
+
+.foodBox .logFood:last-child {
+    position: absolute;
+    bottom: 24px;
+    left: 365px;
+    z-index: 3;
+    height: 150px;
+    width: 150px;
+    background: #e55a19;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Start Toggle Switch */
+.toggle {
+    --width: 120px;
+    --height: 50px;
+    position: relative;
+    display: inline-block;
+    width: var(--width);
+    height: var(--height);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    border-radius: var(--height);
+    cursor: pointer;
+}
+
+.toggle input {
+    display: none;
+}
+
+.toggle .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--height);
+    background-color: #e65c00;
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle .slider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(var(--height));
+    height: calc(var(--height));
+    border-radius: calc(var(--height) / 2);
+    background-color: #fff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease-in-out;
+    background-image: url(../images/toggleIcon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.toggle input:checked+.slider {
+    background-color: #e65c00;
+}
+
+.toggle input:checked+.slider::before {
+    /* transform: rotate(180deg); */
+    transform: translateX(calc(var(--width) - var(--height)));
+}
+
+.toggle .labels {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    font-family: sans-serif;
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle .labels::after {
+    content: attr(data-off);
+    position: absolute;
+    right: 15px;
+    color: #fff;
+    top: 9px;
+    opacity: 1;
+    /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); */
+    transition: all 0.4s ease-in-out;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.toggle .labels::before {
+    content: attr(data-on);
+    position: absolute;
+    left: 15px;
+    color: #ffffff;
+    top: 7px;
+    opacity: 0;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+    transition: all 0.4s ease-in-out;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.toggle input:checked~.labels::after {
+    opacity: 0;
+}
+
+.toggle input:checked~.labels::before {
+    opacity: 1;
+}
+
+/* End Toggle Switch */
+/* Start Input Box */
+.input-container {
+    position: relative;
+}
+
+.border-input {
+    width: 100%;
+    padding: 15px 25px;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid #E9E9E9;
+    background: #FFF;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.04);
+    color: #2E3333;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.border-input::placeholder {
+    color: #2E3333;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.border-label {
+    position: absolute;
+    top: -8px;
+    left: 20px;
+    background-color: #fff;
+    padding: 0 5px;
+    pointer-events: none;
+    transition: 0.2s ease-out;
+    color: #979999;
+    font-family: Open Sans;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.border-input:focus+.border-label,
+.border-input:valid+.border-label {
+    top: -8px;
+    left: 20px;
+    font-size: 12px;
+    background-color: white;
+}
+
+.border-input:focus {
+    border: 1px solid rgba(230, 92, 0, 0.20);
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.04);
+}
+
+/* End Input Box */
+/* Start  Custom checkbox */
+.custom-checkbox {
+    display: inline-block;
+    position: relative;
+    font-size: 16px;
+}
+
+.checkbox-input {
+    display: none;
+}
+
+.checkbox-label {
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.checkbox-label::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #333;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 1px;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.checkbox-input:checked+.checkbox-label::before {
+    border-color: #E65C00;
+}
+
+.checkbox-label::after {
+    content: "\2713";
+    font-size: 22px;
+    color: #E65C00;
+    position: absolute;
+    left: 2px;
+    top: -5px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.checkbox-input:checked+.checkbox-label::after {
+    opacity: 1;
+}
+
+/*End custom checkbox  */
+/* Login start */
+.flexBox {
+    display: flex;
+    align-items: center;
+}
+
+.logForm {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.toggleButtonMain {
+    position: absolute;
+    right: 36px;
+    top: 30px;
+}
+
+.smallSubheading {
+    color: #979999;
+    font-size: 14px;
+    font-weight: 400;
+    padding-right: 30px;
+    margin: 0;
+}
+
+.mainHeading {
+    color: #2E3333;
+    font-family: Crimson Text;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.subHeading {
+    color: #979999;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0;
+    padding: 0 12px 0 0;
+}
+
+.coloredSmallSubheading {
+    color: #E65C00 !important;
+    text-align: right;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.smallBtn {
+    border-radius: 8px;
+    background: #E65C00;
+    padding: 18px 45px;
+    box-shadow: 0px 17px 28px 0px rgba(230, 92, 0, 0.15);
+    border: none;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Choose Role Start */
+.chooseroleBox {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.roleBox {
+    border-radius: 25px;
+    border: 1px solid #E9E9E9;
+    background: #FFF;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.04);
+    padding: 3rem 4rem;
+    text-align: center;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.roleBox.active {
+    border: 2px solid #E65C00;
+}
+
+.roleHeading {
+    color: #2E3333;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 14px 0;
+}
+
+.ChooseRoleIcon {
+    filter: drop-shadow(0px 10px 15px #e65c0064);
+    cursor: pointer;
+}
+
+/* Choose Role End */
+/* Start Create Account */
+.logleft:before {
+    content: '';
+    position: absolute;
+    top: 130px;
+    right: -71px;
+    z-index: 3;
+    width: 140px;
+    height: 140px;
+    background-color: #FFF;
+    border-radius: 50%;
+    
+    box-shadow: 2px 4px 22px 0px rgb(0 0 0 / 42%);
+}
+
+.createAccount:before {
+    background-image: url(../images/Roleuser.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* End Create Account */
+
+/* Start Enter Otp */
+.enterOtp {
+    width: 50px !important;
+    height: 50px !important;
+    margin-right: 10px;
+    border-radius: 8px;
+    border: 1px solid #E9E9E9;
+    background: #FFF;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.04);
+    color: #2E3333;
+    font-size: 18px;
+}
+
+.enterOtp:focus-visible {
+    outline: none;
+    border: 1px solid rgba(230, 92, 0, 0.20);
+}
+
+.backBtn {
+    color: #E65C00;
+    font-size: 14px;
+    border: 1px solid #E65C00;
+    background: transparent;
+    padding: 7px 15px;
+    border-radius: 20px
+}
+
+.verifyIcon:before {
+    background-image: url(../images/verifyIxcon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.forgotIcon:before{
+    background-image: url(../images/forgotIcon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.mainPage .logleft::before {
+    opacity: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}

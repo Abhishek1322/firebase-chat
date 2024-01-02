@@ -1,0 +1,399 @@
+@media (min-width:1800px) {
+    .chefratingsection .modalscroll {
+        height: 100%;
+        max-height: 700px !important;
+    }
+
+    .chefchatsection .chatnext {
+        padding-top: 410px !important;
+    }
+}
+
+@media (max-width:1800px) {}
+
+@media (min-width:1366px) {
+    .chefratingsection .modalscroll {
+        height: 100%;
+        max-height: 592px;
+    }
+}
+
+@media (max-width:1365px) {
+    .menuPage .profileDetail {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .homePage .profileDetail {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .Newbooking_ .profileDetail {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+}
+
+@media (max-width: 1200px) {
+    /* .main {
+        width: calc(100% - 0px) !important;
+    } */
+
+}
+
+@media (max-width:991px) {
+    .logRight {
+        position: relative;
+    }
+
+    .logForm {
+        width: 90%;
+        margin: 5rem auto;
+    }
+
+    .toggleButtonMain {
+        top: -50px;
+    }
+
+    .Chef {
+        right: 0px;
+    }
+
+    .sarahavailablebtn {
+        margin-right: 5px;
+        padding: 10px 18px 10px 10px;
+    }
+
+    .sarahmessagebtn {
+        padding: 10px 18px 10px 10px;
+    }
+
+    .availableimg {
+        padding: 7px;
+        width: 100%;
+        max-width: 35px;
+    }
+
+    .availableheading {
+        font-size: 12px;
+        margin-left: 8px;
+    }
+
+    .sarahImg_ {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+    }
+
+    .restroinfo .johnchatdetail {
+        padding: 4px 8px;
+        cursor: pointer;
+    }
+
+    .chefdetailsection .johnExplorer {
+        color: #2e3333;
+        font-size: 27px;
+        font-weight: 600;
+        margin-bottom: 0;
+        text-transform: capitalize;
+    }
+
+    .profileleft {
+        display: flex;
+        justify-content: center;
+    }
+
+    .editleft {
+        display: flex;
+        justify-content: center;
+    }
+
+    .myprofileLink {
+        margin-top: 20px;
+    }
+
+    .orderstatus {
+        margin-top: 10px;
+    }
+
+    .menuPage .profileDetail {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .homePage .profileDetail {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .Newbooking_ .profileDetail {
+        grid-template-columns: 1fr 1fr 1fr ;
+    }
+}
+
+@media (max-width:767px) {
+    .Chef {
+        right: -7px;
+        height: calc(100% - -99px);
+        object-fit: contain;
+    }
+
+    .logFood {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    .foodBox .logFood:nth-child(2) {
+        left: 60px;
+    }
+
+    .foodBox .logFood:nth-child(3) {
+        left: 120px;
+    }
+
+    .foodBox .logFood:last-child {
+        left: 185px;
+    }
+
+    .logleft::before {
+        opacity: 0;
+        display: none;
+    }
+
+    .logleft {
+        position: static;
+    }
+
+    .foodBox {
+        display: none;
+    }
+
+    .cheffilter {
+        margin-bottom: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .cheffilter .btn-secondary {
+        padding: 0;
+    }
+
+    .dropdown,
+    .dropend,
+    .dropstart,
+    .dropup {
+        position: relative;
+        margin: 12px;
+    }
+
+    .sarahinfo {
+        display: flex;
+        align-items: center;
+        width: auto;
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    .contentLast {
+        justify-content: center !important;
+        margin-top: 15px;
+    }
+
+    .contentCenter {
+        display: flex;
+    }
+
+    .chefCommonHeader {
+        font-size: 28px !important;
+    }
+
+    .navMain .flexBox {
+        justify-content: end !important;
+    }
+
+    .innerHeaderArrow {
+        cursor: pointer;
+        width: 34px;
+        height: 34px;
+    }
+
+    .sarahinformation {
+        left: 0;
+    }
+
+    .main_Setting .sarahmessagebtn {
+        padding: 10px 20px;
+    }
+
+    /* .mainBox.inActiveSidebar .usermain {
+     margin: 0;
+     width: 100%;
+     
+   }  */
+
+    .toggleSideBtn {
+        display: block;
+    }
+
+    .mainBox.inActiveSidebar .userSidebar {
+        position: absolute;
+        left: -100px;
+        transition: all 0.5s;
+        z-index: 2;
+
+    }
+
+    .mainBox.activeSidebar .userSidebar {
+        position: absolute;
+        left: 0px;
+        z-index: 2;
+        transition: all 0.5s;
+    }
+
+    .usermain {
+        width: calc(100% - 0px);
+        margin-left: 0;
+    }
+
+    .settingMain {
+        height: 79vh;
+        overflow: scroll;
+    }
+
+    .mainBoxOuter {
+        padding: 10px 31px;
+        height: 78vh;
+        overflow: scroll;
+    }
+
+    .chefdetailsection {
+        height: 80vh;
+        overflow: scroll;
+    }
+
+    .userordersection {
+        padding: 10px 31px;
+        height: 80vh;
+        overflow: scroll;
+    }
+
+    .chatIconImage {
+        padding: 15px 16px !important;
+    }
+
+    .cart {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .basketImg {
+        left: 16px !important;
+        top: 12px !important;
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .menuPage .profileDetail {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .homePage .profileDetail {
+        grid-template-columns: 1fr 1fr;
+    }
+    .Newbooking_ .profileDetail {
+        grid-template-columns: 1fr 1fr ;
+    }
+
+}
+
+@media (max-width:575px) {
+    .logForm {
+        width: 100%;
+    }
+
+    .toggleButtonMain {
+        right: 23px;
+    }
+
+    .cheffilter .searchtext {
+        padding: 15px 90px 15px 24px;
+    }
+
+    .innerHeaderArrow {
+        width: 35px !important;
+        height: 35px !important;
+    }
+
+    .chefCommonHeader {
+        font-size: 24px !important;
+    }
+
+    .main_Setting .sarahmessagebtn {
+        margin: 0;
+        padding: 10px;
+    }
+
+    .main_Setting .booknowimg {
+        margin-right: 0px;
+    }
+
+    .availableimg {
+        padding: 7px;
+        width: 100%;
+        max-width: 30px;
+    }
+
+    .menuPage .profileDetail {
+        grid-template-columns: 1fr;
+    }
+
+    .homePage .profileDetail {
+        grid-template-columns: 1fr;
+    }
+    .Newbooking_ .profileDetail {
+        grid-template-columns: 1fr ;
+    }
+
+}
+
+@media (min-width:425px) {
+    .chefratingsection .modalscroll {
+        height: 100%;
+        max-height: 600px;
+    }
+
+}
+
+@media (max-width:425px) {
+    .sideBar {
+        height: 100%;
+    }
+
+    .uploadEditImg {
+        max-width: 40px;
+        max-height: 40px;
+    }
+
+    .userprofilesection .profileright {
+        padding: 0px;
+    }
+
+    .pagination {
+        justify-content: center;
+    }
+}
+
+@media (min-width:325px) {
+    .chefchatsection .chatnext {
+        padding-top: 235px;
+    }
+
+}
+
+@media (max-width:372px) {
+    .userorderprice {
+        margin-top: 10px;
+    }
+}
+
+@media (min-width:325px) and (max-width:1800px) {
+    .chatnext {
+        padding-top: 255px !important;
+    }
+}

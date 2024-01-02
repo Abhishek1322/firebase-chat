@@ -1,0 +1,849 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Crimson Text", serif;
+  font-family: "Open Sans", sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* overflow-x: hidden; */
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:-webkit-any-link:focus-visible {
+  outline: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+textarea:focus-visible {
+  outline: 0;
+}
+
+/* Start Custom Checkbox */
+.checkBoxTxt {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #575757;
+  font-size: 13px;
+  line-height: 25px;
+  letter-spacing: 1px;
+}
+
+.checkBox {
+  appearance: none;
+  display: none;
+}
+
+.checkBoxTxt span {
+  display: inline-block;
+  text-align: start;
+}
+
+.checkBoxTxt:before {
+  content: "";
+  -webkit-appearance: none;
+  /* background-color: transparent; */
+  border: 2px solid #d3d3d3;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 12px;
+  border-radius: 7px;
+}
+
+.checkBox:checked+.checkBoxTxt:before {
+  background: #388e1e;
+  border: 2px solid #388e1e;
+}
+
+.checkBox:checked+.checkBoxTxt:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -60%) rotate(45deg);
+  left: 9px;
+  width: 6px;
+  height: 14px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+}
+
+/* End Custom Checkbox */
+/* Start CustomRadio Button */
+.customRadio:checked,
+.customRadio:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+.customRadio:checked+label,
+.customRadio:not(:checked)+label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  color: #666;
+}
+
+.customRadio:checked+label:before,
+.customRadio:not(:checked)+label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #fff;
+  border-radius: 100%;
+  background: transparent;
+}
+
+.customRadio:checked+label:after,
+.customRadio:not(:checked)+label:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.customRadio:not(:checked)+label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+.customRadio:checked+label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+/* End CustomRadio Button */
+/* Scrollbar-Css */
+.scrollbar {
+  background-image: linear-gradient(to right, #1c3276, #4c69c3, #1c3276);
+  width: 6px;
+  height: 10%;
+}
+
+.scrollbar-track {
+  background-color: #d9d9d9;
+}
+
+.scrollbar-thumb {
+  background-image: linear-gradient(to right, #1c3276, #4c69c3, #1c3276);
+  border-radius: 16px;
+  border: 0px solid #d9d9d9;
+}
+
+::-webkit-scrollbar {
+  background-image: linear-gradient(to right, #1c3276, #4c69c3, #1c3276);
+  width: 6px;
+  height: 10%;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #d9d9d9;
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to right, #1c3276, #4c69c3, #1c3276);
+  border-radius: 16px;
+  border: 0px solid #d9d9d9;
+}
+
+::-moz-scrollbar {
+  background-image: linear-gradient(to right, #1c3276, #4c69c3, #1c3276);
+  width: 6px;
+  height: 10%;
+}
+
+::-moz-scrollbar-track {
+  background-image: linear-gradient(to right, #1c3276, #4c69c3, #1c3276);
+}
+
+::-moz-scrollbar-thumb {
+  background-color: #babac0;
+  border-radius: 16px;
+  border: 0px solid #fff;
+}
+
+/* End Scrollbar Css */
+button:focus,
+button:focus-visible,
+.form-select:focus,
+.form-select:focus-visible,
+.form-control:focus,
+.form-control:focus-visible {
+  box-shadow: none;
+  outline: none;
+}
+
+button:focus:not(:focus-visible) {
+  outline: 0;
+  box-shadow: none;
+}
+
+input:focus-visible {
+  outline: 0px;
+}
+
+button {
+  background: transparent;
+  outline: 0;
+  border: 0;
+}
+
+.customFormControl {
+  width: 100%;
+  border: 1px solid #6e6e6e !important;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.customFormControl::placeholder {
+  color: #5e5f5e;
+  font-weight: 400;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+/*---- End Common Css ----*/
+.mainBox {
+  display: flex;
+}
+
+/* Start setup profile page */
+.logoMain {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.outerBoxmain {
+  background-image: url(../images/loginbg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.cheftypeBox {
+  display: flex;
+  align-items: center;
+  padding: 10px !important;
+}
+
+.chefType {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  justify-content: space-between;
+  color: #2e3333;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px;
+}
+
+.PersonalDetails {
+  border-radius: 17px;
+  background: #2e3333;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 10px;
+}
+
+.progressCount {
+  color: #2e3333;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.indexedStep.completed .progressCount {
+  display: none !important;
+}
+
+.chefType.active {
+  background: #e65c00;
+  border-radius: 10px;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.chefType.active .InfoIconActive {
+  display: block !important;
+}
+
+.chefType.active .InfoIcon {
+  display: none;
+}
+
+.InputIcon {
+  position: absolute;
+  top: 17px;
+  right: 14px;
+}
+
+.setUpHeading {
+  color: #2e3333;
+  text-align: center;
+  font-family: Crimson Text;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.Headingsmall {
+  color: #2e3333;
+  font-family: Crimson Text;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.progressBox {
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0px 5px 22px 0px rgba(0, 0, 0, 0.04);
+  margin-bottom: 2rem;
+  padding: 20px;
+}
+
+.addButton {
+  border-radius: 40px;
+  border: 1px solid #e65c00;
+  padding: 5px 13px;
+  color: #e65c00;
+}
+
+.smallBtn.disable {
+  background: #f7ceb3;
+}
+
+.react-tooltip {
+  position: absolute;
+  opacity: 1;
+  top: 40px !important;
+  visibility: visible !important;
+}
+
+.styles-module_arrow__K0L3T {
+  width: 18px;
+  height: 18px;
+  top: -10px;
+  left: 340px !important;
+}
+
+.styles-module_dark__xNqje {
+  border-radius: 15px !important;
+  background: #fff !important;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.05) !important;
+  color: #abadad !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+
+/* Start AddExpertise modal */
+#AddExpertise {
+  max-width: 406px;
+  margin: 0;
+  margin-left: auto;
+  width: 100%;
+  top: 20px;
+  right: 20px;
+  height: 96vh;
+}
+
+#AddExpertise .modal-content {
+  height: 100%;
+}
+
+.addMore {
+  color: #e65c00;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#AddExpertise .InputIcon {
+  top: 11px;
+  cursor: pointer;
+}
+
+.buttomBtn {
+  position: fixed;
+  bottom: 50px;
+  width: 100%;
+  max-width: 327px;
+}
+
+/* End AddExpertise modal */
+
+.expertiseList {
+  border-radius: 4px;
+  background: #eeefef;
+  color: #2e3333;
+  font-size: 12px;
+  font-weight: 400;
+  display: inline-block;
+  padding: 8px 15px;
+  margin: 5px 13px 5px 0;
+}
+
+.subHeadingSmall {
+  color: #979999;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.uploadFileDetail {
+  color: #2e3333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.uploadFileIcon {
+  width: 22px;
+  height: 25px;
+}
+
+.fileDetail {
+  margin-left: 20px;
+}
+
+.innerUploadImgBox {
+  width: 335px;
+  height: 88px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  background-color: rgba(230, 92, 0, 0.1);
+  justify-content: space-between;
+  border-radius: 16px;
+}
+
+.uploadFileButton {
+  padding-top: 40px;
+}
+
+.fileDetail {
+  text-align: left;
+}
+
+.uploadcancelIcon {
+  width: 10px;
+  height: 10px;
+  color: #2e3333;
+}
+
+.uploadImgebox {
+  /* display: inline-block; */
+  width: 100%;
+  background: rgba(254, 250, 247, 1);
+  border: 1px dashed #f5be99;
+  border-radius: 20px;
+  text-align: center;
+  padding: 35px 50px 35px;
+  margin-bottom: 20px;
+  height: 219px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.uploadImgeboxNew {
+  display: inline-block;
+  width: 100%;
+  background: transparent;
+  border: 1px dashed #f5be99;
+  border-radius: 8px;
+  text-align: center;
+  padding: 50px;
+  margin-bottom: 20px;
+}
+
+.uploadbtnn {
+  background: rgba(230, 92, 0, 0.08);
+  border-radius: 33px;
+  color: rgba(230, 92, 0, 1);
+  font-size: 12px;
+  padding: 9px 40px;
+  font-weight: 600;
+  display: inline-block;
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+.Uploadicon {
+  display: block;
+  margin: 0 auto;
+}
+
+.uploadText {
+  color: #abadad;
+  font-size: 12px;
+  margin: 0;
+}
+
+.HeadingSmall {
+  color: #2e3333;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.availability {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.weekBox {
+  text-align: center;
+}
+
+.weekDays {
+  border-radius: 10px;
+  background: #fcefe5;
+  display: inline-block;
+  padding: 16px 9px;
+  margin-top: 2rem;
+  margin-right: 8px;
+  color: #2e3333;
+  font-family: Crimson Text;
+  font-size: 12px;
+  font-weight: 600;
+  width: 50px;
+  text-align: center;
+}
+
+.availability .weekDays {
+  width: 38px;
+}
+
+.weekDays.active {
+  background: #e65c00;
+  color: #fff;
+}
+
+.timeSlotBox {
+  padding: 20px 30px;
+}
+
+.HeadingsmallText {
+  color: #2e3333;
+  font-family: Crimson Text;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.borderBottom {
+  color: rgba(233, 233, 233, 0.5);
+  opacity: 1;
+}
+
+.react-datepicker-wrapper {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 75%;
+}
+
+.react-datepicker-ignore-onclickoutside,
+.react-datepicker__input-container input {
+  background: rgba(234, 235, 235, 0.5);
+  border: 1px solid #e9e9e9;
+  border-radius: 8px;
+  padding: 8px 20px 8px 30px;
+  color: #979999;
+  font-size: 14px;
+  font-weight: 400;
+  width: 100%;
+}
+
+.ClockIcon {
+  position: absolute;
+  top: 19px;
+  left: 68px;
+}
+
+.deleteBox {
+  position: relative;
+}
+
+.DeleteIcon {
+  position: absolute;
+  top: 35px;
+  cursor: pointer;
+  left: 40px;
+}
+
+/* End setup profile page */
+
+/* Start User Home  */
+.mainBoxOuter {
+  padding: 10px 31px;
+}
+
+.headingSub {
+  color: #2e3333;
+  font-family: Crimson Text;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.outerBox {
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.chefDetails {
+  background-image: url(../images/ChefCap.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 90px;
+  width: 90px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.UserICon {
+  position: absolute;
+  left: -10px;
+  top: 20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.smallHeading {
+  color: #2e3333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.expBtn {
+  border-radius: 4px;
+  background: #e65c00;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 5px 15px;
+}
+
+.ratingBox {
+  background: hsl(122deg 55% 46% / 10%);
+  padding: 0px 6px;
+  border-radius: 4px;
+}
+
+.coloredText {
+  color: #35b539;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.startIcon {
+  font-size: 12px;
+  color: rgba(255, 193, 7, 1);
+  margin-right: 3px;
+}
+
+.dayavailability.active {
+  background: #e65c00;
+  box-shadow: 0px 10px 15px 0px rgba(230, 92, 0, 0.3);
+}
+
+.react-time-picker__inputGroup__input:invalid {
+  background: none !important;
+}
+
+.date-picker-resp .react-datepicker-ignore-onclickoutside,
+.react-datepicker__input-container input {
+  width: 100%;
+  padding: 15px 25px;
+  outline: none;
+  border-radius: 8px;
+  border: 1px solid #E9E9E9;
+  background: #FFF;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.04);
+  color: #2E3333;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.date-picker-outer .react-datepicker-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+
+.reviewsection,
+.cursor-pointer-notifiy {
+  cursor: pointer;
+}
+
+.StarRating_ {
+  cursor: pointer;
+}
+
+.StarRating_.activeRating {
+  background-color: #2E3333;
+
+}
+
+.StarRating_.activeRating span {
+  color: #fff;
+}
+
+.ratingProgressBarNew .ant-progress-bg {
+  background-color: #FFC107 !important;
+  height: 10px !important;
+}
+
+.ratingProgressBarNew .ant-progress-inner {
+  margin-top: 21px;
+  background-color: #FFF3CD;
+  border-radius: 50px;
+  height: 10px;
+}
+
+.locate.current-locate-btn {
+  border-radius: 8px;
+  border: 2px solid #E65C00;
+  background: #FFF;
+  box-shadow: 0px 17px 28px 0px rgba(230, 92, 0, 0.10);
+  color: #E65C00;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding: 14px 60px;
+  display: flex;
+  gap: 10px;
+}
+
+.search.search-location-input {
+  position: relative;
+  display: inline-block;
+}
+
+.search-location-input {
+  fill: #FFF;
+  stroke-width: 1px;
+  stroke: rgba(230, 92, 0, 0.15);
+  filter: drop-shadow(0px 9px 19px rgba(230, 92, 0, 0.03));
+  border: none;
+  padding: 14px 5px 14px 36px;
+  color: #ABADAD;
+  font-family: Open Sans;
+  font-size: 16px;
+  border-radius: 8px;
+  width: 500px;
+}
+
+.locate-icon-map {
+  position: absolute;
+  left: 43px;
+  top: 28px;
+}
+
+.search-icon-map {
+  position: absolute;
+  right: -20px;
+  top: 22px;
+  background: #E65C00;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.location-list-box {
+  width: 500px !important;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+}
+
+.location-list-items {
+  width: 500px !important;
+}
+
+.locate-options {
+  color: #2E3333;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  border-bottom: 1px solid rgba(192, 194, 194, 0.50);
+  padding: 10px 4px;
+  /* border-style: dashed; */
+}
+.search-current {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  position: absolute;
+  z-index: 1;
+  gap: 50px;
+  left: 39%;
+  right: 8px;
+  top: 25px;
+}
+.select-image-outer {
+  position: absolute;
+  bottom: 81px;
+}

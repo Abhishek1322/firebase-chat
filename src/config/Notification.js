@@ -1,0 +1,45 @@
+import React, { useState, useEffect } from "react";
+import toast, { Toaster } from "react-hot-toast";
+import { onMessageListener } from "./firebase-config";
+
+const Notifications = () => {
+  const [notification, setNotification] = useState({ title: "", body: "" });
+  const notify = () => toast(<ToastDisplay />);
+
+  // const notify = () =>
+  // toast(<ToastDisplay />, {
+  //   duration: 10 * 60 * 1000,
+  // });
+
+  function ToastDisplay() {
+    return (
+      <>
+        <div>
+          <p>
+            <b>{notification?.title}</b>
+          </p>
+          <p>{notification?.body}</p>
+        </div>
+      </>
+    );
+  }
+
+  useEffect(() => {
+    if (notification?.title) {
+      notify();
+    }
+  }, [notification]);
+
+  onMessageListener()
+    .then((payload) => {
+      setNotification({
+        title: payload?.notification?.title,
+        body: payload?.notification?.body,
+      });
+    })
+    .catch((err) => console.log("failed: ", err));
+
+  return <Toaster />;
+};
+
+export default Notifications;
